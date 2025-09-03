@@ -1,0 +1,15 @@
+theme = Hardcore
+font-size = 24
+font-family = Iosevka Kamii
+# font-family = JetBrains Mono
+confirm-close-surface = false
+window-padding-balance = true
+window-padding-color = extend
+gtk-titlebar = false
+cursor-style-blink = false
+shell-integration = zsh
+
+# off ligatures
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig

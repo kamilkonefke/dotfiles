@@ -1,0 +1,18 @@
+font = JetBrains Mono
+font-size = 24
+hide-cursor = true
+fuzzy-match = true
+
+height = 35%
+width = 50%
+
+prompt-color = #a0a0a0
+prompt-text = "λ "
+
+border-width = 0
+outline-width = 0
+
+background-color = #000000
+border-color = #ffffff
+text-color = #a0a0a0
+selection-color = #ffffff
