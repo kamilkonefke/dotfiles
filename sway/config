@@ -12,7 +12,7 @@ set $menu tofi-drun | xargs swaymsg exec --
 # autostart
 for_window [app_id="com.mitchellh.ghostty"] move container to workspace 1
 for_window [app_id="zen"] move container to workspace 2
-for_window [app_id="tidal-hifi"] move container to workspace 8
+for_window [class="Cider"] move container to workspace 8
 for_window [class="vesktop"] move container to workspace 9
 
 exec ghostty
@@ -20,7 +20,7 @@ exec zen-browser
 
 output * bg wallpapers/wallpaper.jpg fill
 output DP-1 mode 1920x1080@165Hz position 1920 0
-output DP-2 mode 1920x1080@180Hz position 0 0
+output DP-2 mode 1920x1080@165Hz position 0 0
 
 workspace 1 output DP-1
 workspace 2 output DP-1
@@ -41,8 +41,18 @@ default_floating_border normal
 bar {
     position bottom
     status_command while date +'%Y-%m-%d %H:%M:%S'; do sleep 1; done
+
+    colors {
+        statusline #ffffff
+        focused_workspace  #393552      #2a273f     #e0def4
+        active_workspace   #191724      #191724     #e0def4
+        inactive_workspace #32323200    #32323200   #5c5c5c
+        urgent_workspace   #eb6f92      #16a085     #e0def4
+    }
 }
 
+client.focused #393552 #232136 #e0def4 #393552
+ 
 input type:keyboard {
     xkb_layout pl
     xkb_options "sticky_keys=off"
