@@ -35,23 +35,26 @@ workspace 10 output DP-1
 
 workspace 1
 
-default_border normal
-default_floating_border normal
+default_border pixel 2
+default_floating_border pixel 2
+
+gaps inner 5
+gaps outer 5
 
 bar {
     position bottom
     status_command while date +'%Y-%m-%d %H:%M:%S'; do sleep 1; done
 
     colors {
-        statusline #ffffff
-        focused_workspace  #393552      #2a273f     #e0def4
-        active_workspace   #191724      #191724     #e0def4
-        inactive_workspace #32323200    #32323200   #5c5c5c
-        urgent_workspace   #eb6f92      #16a085     #e0def4
+        background #000000
+        statusline #e0def4
+
+        focused_workspace #575279 #575279 #e0def4
+        focused_workspace #575279 #575279 #e0def4
     }
 }
 
-client.focused #393552 #232136 #e0def4 #393552
+client.focused #000000 #575279 #000000 #575279
  
 input type:keyboard {
     xkb_layout pl
