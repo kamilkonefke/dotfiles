@@ -1,0 +1,29 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing" : 0,
+
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["custom/music"],
+    "modules-right": ["clock"],
+
+    "custom/music": {
+        "format": "{}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ artist }} - {{ title }}'",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "on-click-middle": "playerctl previous",
+        "max-length": 55
+    },
+
+    "clock": {
+        "timezone": "Europe/Warsaw",
+        "tooltip": false,
+        "format": "{:%H:%M:%S | %d %b}",
+        "interval": 1
+    },
+}
+

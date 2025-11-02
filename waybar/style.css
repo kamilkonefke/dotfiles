@@ -1,0 +1,53 @@
+/* --- Global Styles --- */
+* {
+    all: unset;
+    font-family: 'JetBrains Mono';
+    font-size: 16px;
+}
+
+#waybar {
+    background: transparent;
+    font-weight: 500;
+}
+
+#workspaces {
+    border: 2px solid #a3d0fd;
+    margin: 5px 10px 0px;
+    background-color: #1a1b26;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#workspaces button {
+    padding: 0.3rem 0.6rem;
+    background: transparent;
+}
+
+#workspaces button.active {
+    color: #a3d0fd;
+}
+
+#custom-music {
+    border: 2px solid #a3d0fd;
+    margin: 5px 10px 0px;
+    color: #ffffff;
+    background-color: #1a1b26;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    min-width: 0;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+#clock {
+    border: 2px solid #A3D0FD;
+    margin: 5px 10px 0px;
+    color: #ffffff;
+    background-color: #1a1b26;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    min-width: 0;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
