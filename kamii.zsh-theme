@@ -9,4 +9,4 @@ function git_branch() {
 }
 
 PROMPT='%F{#FFFFFF}%~%f$(git_branch)
-> '
+λ '
