@@ -3,8 +3,7 @@ export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export EDITOR=nvim
 
 export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/go/bin:$PATH"
-export PATH="$HOME/.zig:$PATH"
+export PATH="$HOME/.apps:$PATH"
 
 ZSH_THEME="kamii"
 COMPLETION_WAITING_DOTS="true"
@@ -21,12 +20,9 @@ alias la="ls -la"
 
 alias conf="cd ~/.config/"
 alias v="nvim"
-alias mixer="ncpamixer"
-alias disk-util="ncdu"
 
 bindkey -r '^b'
 bindkey -r '^o'
 bindkey -s '^b' 'fzf_search\n'
 bindkey -s '^t' 'tmux\n'
 bindkey -s '^e' 'v .\n'
-bindkey -s '^a' 'pulsemixer\n'
