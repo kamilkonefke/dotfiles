@@ -15,7 +15,6 @@ for_window [app_id="firefox"] move container to workspace 2
 
 exec ghostty
 
-output * bg wallpapers/wallpaper.jpg fill
 output DP-1 mode 1920x1080@180Hz position 0 0
 
 workspace 1 output DP-1
