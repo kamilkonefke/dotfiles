@@ -1,6 +1,6 @@
 theme = Hardcore
-font-size = 22
-font-family = JetBrains Mono
+font-size = 24
+font-family = Cascadia Mono
 confirm-close-surface = false
 window-padding-balance = true
 window-padding-color = extend
