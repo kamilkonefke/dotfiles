@@ -10,10 +10,7 @@ set $menu wmenu-run -f "Cascadia Mono 10"
 font pango:Cascadia Mono 10
 
 # autostart
-for_window [app_id="com.mitchellh.ghostty"] move container to workspace 1
-for_window [app_id="firefox"] move container to workspace 2
-
-exec ghostty
+exec $term
 
 output * bg wallpaper.png fill
 output DP-1 mode 1920x1080@180Hz position 0 0
@@ -33,7 +30,7 @@ workspace 1
 
 bar {
     position bottom
-    status_command while date +'%Y-%m-%d %H:%M:%S'; do sleep 1; done
+    status_command while date +'%d %b %H:%M'; do sleep 1; done
 }
  
 input type:keyboard {
@@ -93,6 +90,7 @@ bindsym $mod+Shift+8 move container to workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 
+bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen
 bindsym $mod+v floating toggle
