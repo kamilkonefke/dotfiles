@@ -4,7 +4,7 @@ set $down j
 set $up k
 set $right l
 
-set $term ghostty
+set $term foot
 set $menu wmenu-run -f "Cascadia Mono 10"
 
 font pango:Cascadia Mono 10
@@ -12,7 +12,6 @@ font pango:Cascadia Mono 10
 # autostart
 exec $term
 
-output * bg wallpaper.png fill
 output DP-1 mode 1920x1080@180Hz position 0 0
 
 workspace 1 output DP-1
