@@ -1,25 +1,27 @@
-export ZSH="$HOME/.oh-my-zsh"
-export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
 export EDITOR=nvim
 
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.apps:$PATH"
-
-ZSH_THEME="kamii"
-COMPLETION_WAITING_DOTS="true"
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
-
-function fzf_search() {
-    cd "$(find ~/dev -maxdepth 1 | fzf)"
+function git_branch() {
+  local branch
+  branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+  if [[ -n $branch ]]; then
+    echo "%F{#FFA07A}(git:$branch)%f"
+  fi
 }
+
+PS1="%F{#FFFFFF}%~%f $(git_branch)
+λ "
 
 alias ll="ls -l"
 alias la="ls -la"
 
 alias conf="cd ~/.config/"
 alias v="nvim"
+
+function fzf_search() {
+    cd "$(find ~/dev -maxdepth 1 | fzf)"
+}
 
 bindkey -r '^b'
 bindkey -r '^o'
