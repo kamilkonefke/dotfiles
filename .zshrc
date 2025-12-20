@@ -1,4 +1,7 @@
+export ZSH="$HOME/.oh-my-zsh"
 export EDITOR=nvim
+
+COMPLETION_WAITING_DOTS=true
 
 plugins=(git)
 
@@ -10,14 +13,16 @@ function git_branch() {
   fi
 }
 
-PS1="%F{#FFFFFF}%~%f $(git_branch)
-λ "
+export PROMPT='%F{#FFFFFF}%~%f $(git_branch)
+λ '
 
 alias ll="ls -l"
 alias la="ls -la"
 
 alias conf="cd ~/.config/"
 alias v="nvim"
+
+source $ZSH/oh-my-zsh.sh
 
 function fzf_search() {
     cd "$(find ~/dev -maxdepth 1 | fzf)"
