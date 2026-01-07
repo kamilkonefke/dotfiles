@@ -11,9 +11,15 @@ font pango:Iosevka 10
 
 # autostart
 exec $term
+exec pipewire &
+
+# obs stuff
+exec dbus-update-activation-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 output DP-1 mode 1920x1080@180Hz position 0 0
+
 # output * bg [path_to_wallpaper] fill
+seat seat0 xcursor_theme Adwaita 24
 
 workspace 1
 
@@ -24,7 +30,6 @@ bar {
  
 input type:keyboard {
     xkb_layout pl
-    xkb_options "sticky_keys=off"
     repeat_delay 500
     repeat_rate 30
 }
