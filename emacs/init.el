@@ -5,7 +5,9 @@
       create-lockfiles nil
       gc-cons-threshold (* 100 1024 1024)
       display-line-numbers-grow-only t
-      display-line-numbers-width-start t)
+      display-line-numbers-width-start t
+      scroll-conservatively 10
+      scroll-margin 15)
 
 (setq-default truncate-lines t
               indent-tabs-mode nil)
