@@ -25,6 +25,7 @@
 
 (add-to-list 'default-frame-alist `(font . "Iosevka-22"))
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ; packages
 (require 'package)
