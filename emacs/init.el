@@ -14,16 +14,13 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(ido-mode 1)
-(ido-everywhere 1)
 (menu-bar-mode 0)
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (show-paren-mode 1)
 (electric-indent-mode 1)
-(global-display-line-numbers-mode)
 
-(add-to-list 'default-frame-alist `(font . "Iosevka-22"))
+(add-to-list 'default-frame-alist `(font . "Agave 22"))
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -31,30 +28,53 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
-(require 'multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->")         'mc/mark-next-like-this)
-(global-set-key (kbd "C-<")         'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<")     'mc/mark-all-like-this)
-(global-set-key (kbd "C-\"")        'mc/skip-to-next-like-this)
-(global-set-key (kbd "C-:")         'mc/skip-to-previous-like-this)
+(use-package multiple-cursors
+  :ensure t
+  :bind (("C-S-c C-S-c" . mc/edit-lines)
+         ("C->" . mc/mark-next-like-this)
+         ("C-<" . mc/mark-previous-like-this)
+         ("C-c C-<" . mc/mark-all-like-this)
+         ("C-\"" . mc/skip-to-next-like-this)
+         ("C-:" . mc/skip-to-previous-like-this)))
 
-(require 'move-text)
-(global-set-key (kbd "M-p") 'move-text-up)
-(global-set-key (kbd "M-n") 'move-text-down)
+(use-package corfu
+  :ensure t
+  :init
+  (global-corfu-mode))
 
-(require 'smex)
-(global-set-key (kbd "M-x") 'smex)
+(use-package vertico
+  :ensure t
+  :init (vertico-mode))
 
-; modes
-(add-to-list 'load-path  "~/.emacs.d/modes")
+(use-package orderless
+  :ensure t
+  :init
+  (setq completion-styles '(orderless basic)))
 
-(require 'simpc-mode)
-(add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
+(use-package marginalia
+  :ensure t
+  :bind (:map minibuffer-local-map
+         ("M-A" . marginalia-cycle))
+  :init
+  (marginalia-mode))
 
-(require 'odin-mode)
+(use-package magit
+  :ensure t)
 
-(require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+; major modes
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/modes"))
+
+(use-package simpc-mode
+  :mode ("\\.[hc]\\(pp\\)?$" . simpc-mode))
+
+(use-package odin-mode
+  :mode "\\.odin$")
+
+(use-package web-mode
+  :mode ("\\.html?$" . web-mode))
+
+(use-package rust-mode
+  :ensure t
+  :mode "\\.rs$")
 
 (load-file custom-file)
