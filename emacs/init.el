@@ -7,7 +7,10 @@
       display-line-numbers-grow-only t
       display-line-numbers-width-start t
       scroll-conservatively 10
-      scroll-margin 15)
+      scroll-margin 15
+      inhibit-startup-screen t
+      show-paren-delay 0.1
+      show-paren-style 'parenthesis)
 
 (setq-default truncate-lines t
               indent-tabs-mode nil)
@@ -37,10 +40,10 @@
          ("C-\"" . mc/skip-to-next-like-this)
          ("C-:" . mc/skip-to-previous-like-this)))
 
-(use-package corfu
+(use-package move-text
   :ensure t
-  :init
-  (global-corfu-mode))
+  :bind (("M-n" . move-text-down)
+         ("M-p" . move-text-up)))
 
 (use-package vertico
   :ensure t
@@ -57,6 +60,10 @@
          ("M-A" . marginalia-cycle))
   :init
   (marginalia-mode))
+
+(use-package company
+  :ensure t
+  :hook (after-init-hook . company-mode))
 
 (use-package magit
   :ensure t)
