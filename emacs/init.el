@@ -1,6 +1,7 @@
 (package-initialize)
 
 (setq custom-file "~/.emacs.d/custom.el"
+      confirm-kill-processes nil
       make-backup-files nil
       create-lockfiles nil
       gc-cons-threshold (* 100 1024 1024)
@@ -30,6 +31,12 @@
 ; packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
+(use-package ef-themes
+  :ensure t
+  :init
+  (ef-themes-take-over-modus-themes-mode 1)
+  (modus-themes-load-theme 'ef-dream))
 
 (use-package multiple-cursors
   :ensure t
