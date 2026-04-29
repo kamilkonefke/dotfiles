@@ -7,6 +7,7 @@
       gc-cons-threshold (* 100 1024 1024)
       display-line-numbers-grow-only t
       display-line-numbers-width-start t
+      mouse-wheel-progressive-speed nil
       scroll-conservatively 10
       scroll-margin 15
       inhibit-startup-screen t
@@ -67,10 +68,6 @@
          ("M-A" . marginalia-cycle))
   :init
   (marginalia-mode))
-
-(use-package company
-  :ensure t
-  :hook (after-init-hook . company-mode))
 
 (use-package magit
   :ensure t)
