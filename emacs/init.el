@@ -14,6 +14,8 @@
       show-paren-delay 0.1
       show-paren-style 'parenthesis)
 
+(load-file custom-file)
+
 (setq-default truncate-lines t
               indent-tabs-mode nil)
 
@@ -24,20 +26,24 @@
 (scroll-bar-mode 0)
 (show-paren-mode 1)
 (electric-indent-mode 1)
+(blink-cursor-mode 0)
 
 (add-to-list 'default-frame-alist `(font . "Agave 22"))
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
 
 ; packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
+(use-package nord-theme :ensure t)
+(use-package gruber-darker-theme :ensure t)
 (use-package ef-themes
-  :ensure t
-  :init
-  (ef-themes-take-over-modus-themes-mode 1)
-  (modus-themes-load-theme 'ef-dream))
+  :ensure t)
+  ; :init
+  ; (ef-themes-take-over-modus-themes-mode 1)
+  ; (modus-themes-load-theme 'ef-dream))
 
 (use-package multiple-cursors
   :ensure t
@@ -87,5 +93,3 @@
 (use-package rust-mode
   :ensure t
   :mode "\\.rs$")
-
-(load-file custom-file)
