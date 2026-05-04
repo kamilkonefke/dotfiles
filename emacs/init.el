@@ -12,12 +12,16 @@
       scroll-margin 15
       inhibit-startup-screen t
       show-paren-delay 0.1
-      show-paren-style 'parenthesis)
+      show-paren-style 'parenthesis
+      bidi-inhibit-bpa t
+      kill-do-not-save-duplicates t)
 
 (load-file custom-file)
 
 (setq-default truncate-lines t
-              indent-tabs-mode nil)
+              indent-tabs-mode nil
+              bidi-display-reordering 'left-to-right
+              bidi-paragraph-direction 'left-to-right)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -28,7 +32,7 @@
 (electric-indent-mode 1)
 (blink-cursor-mode 0)
 
-(add-to-list 'default-frame-alist `(font . "Agave 22"))
+(add-to-list 'default-frame-alist `(font . "DejaVu Sans Mono 18"))
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
