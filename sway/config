@@ -19,9 +19,7 @@ exec swayidle -w \
 
 output DP-1 mode 1920x1080@180Hz position 0 0
 
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 output * bg #002b36 solid_color
-# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 seat seat0 xcursor_theme Adwaita 24
 
 default_border pixel 2
