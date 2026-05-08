@@ -9,12 +9,8 @@ set $menu wmenu-run -f "DejaVu Sans Mono 10"
 
 font pango:DejaVu Sans Mono 10
 
-# autostart
 exec pipewire &
-
-# obs stuff
 exec dbus-update-activation-environment DISPLAY I3SOCK SWAYSOCK WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-
 exec swayidle -w \
      timeout 300 'swaylock -f -c 000000' \
      timeout 600 'swaymsg "output * power off"' \
@@ -24,7 +20,11 @@ exec swayidle -w \
 output DP-1 mode 1920x1080@180Hz position 0 0
 
 output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg #002b36 solid_color
+# output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 seat seat0 xcursor_theme Adwaita 24
+
+default_border pixel 2
 
 input type:keyboard {
     xkb_layout pl
