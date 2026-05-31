@@ -33,7 +33,7 @@
 (blink-cursor-mode 0)
 (pending-delete-mode 1)
 
-(add-to-list 'default-frame-alist `(font . "DejaVu Sans Mono 18"))
+(add-to-list 'default-frame-alist `(font . "Hack 18"))
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
