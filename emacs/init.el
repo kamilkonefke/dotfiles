@@ -33,7 +33,7 @@
 (blink-cursor-mode 0)
 (pending-delete-mode 1)
 
-(add-to-list 'default-frame-alist `(font . "Hack 18"))
+(add-to-list 'default-frame-alist `(font . "Iosevka 20"))
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
@@ -41,14 +41,6 @@
 ; packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-
-(use-package nord-theme :ensure t)
-(use-package gruber-darker-theme :ensure t)
-(use-package ef-themes
-  :ensure t)
-  ; :init
-  ; (ef-themes-take-over-modus-themes-mode 1)
-  ; (modus-themes-load-theme 'ef-dream))
 
 (use-package multiple-cursors
   :ensure t
@@ -94,7 +86,3 @@
 
 (use-package web-mode
   :mode ("\\.html?$" . web-mode))
-
-(use-package rust-mode
-  :ensure t
-  :mode "\\.rs$")
