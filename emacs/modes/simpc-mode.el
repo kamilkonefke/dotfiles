@@ -48,6 +48,7 @@
    `("# *[#a-zA-Z0-9_]+" . font-lock-preprocessor-face)
    `("# *include\\(?:_next\\)?\\s-+\\(\\(<\\|\"\\).*\\(>\\|\"\\)\\)" . (1 font-lock-string-face))
    `("\\(?:enum\\|struct\\)\\s-+\\([a-zA-Z0-9_]+\\)" . (1 font-lock-type-face))
+   `("\\_<\\([A-Z][A-Za-z0-9_]*\\)\\_>\\(\\s-+[*&]*\\s-*\\w+\\)" . (1 font-lock-type-face))
    `(,(regexp-opt (simpc-keywords) 'symbols) . font-lock-keyword-face)
    `(,(regexp-opt (simpc-types) 'symbols) . font-lock-type-face)))
 
