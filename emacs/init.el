@@ -19,6 +19,7 @@
 (load-file custom-file)
 
 (setq-default truncate-lines t
+              pgtk-wait-for-event-timeout 0
               indent-tabs-mode nil
               bidi-display-reordering 'left-to-right
               bidi-paragraph-direction 'left-to-right)
@@ -33,7 +34,7 @@
 (blink-cursor-mode 0)
 (pending-delete-mode 1)
 
-(add-to-list 'default-frame-alist `(font . "Iosevka 20"))
+(add-to-list 'default-frame-alist `(font . "Hack 16"))
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
@@ -74,6 +75,25 @@
 
 (use-package magit
   :ensure t)
+
+(use-package corfu
+  :ensure t
+  :bind
+  :init
+  (global-corfu-mode)
+  (setq corfu-auto t
+        corfu-auto-delay 2.0)
+  :bind
+  ("M-/" . completion-at-point))
+
+(use-package cape
+  :ensure t
+  :bind ("M-<tab>" . cape-prefix-map)
+  :init
+  (add-hook 'completion-at-point-functions #'cape-dabbrev)
+  (add-hook 'completion-at-point-functions #'cape-file)
+  (add-hook 'completion-at-point-functions #'cape-elisp-block)
+)
 
 ; major modes
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/modes"))
