@@ -20,7 +20,6 @@ exec swayidle -w \
 output DP-1 mode 1920x1080@180Hz position 0 0
 output DP-1 scale 1.0
 
-output * bg night.jpg fill
 seat seat0 xcursor_theme Adwaita 24
 
 input type:keyboard {

@@ -34,10 +34,12 @@
 (blink-cursor-mode 0)
 (pending-delete-mode 1)
 
-(add-to-list 'default-frame-alist `(font . "Hack 16"))
+(add-to-list 'default-frame-alist `(font . "Hack 20"))
 (add-hook 'prog-mode-hook #'display-line-numbers-mode)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
+
+(load-theme 'modus-vivendi)
 
 ; packages
 (require 'package)
