@@ -15,9 +15,9 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
-bindsym $mod+q kill
-bindsym $mod+t exec alacritty
-bindsym $mod+space exec --no-startup-id dmenu_run -fn "DejaVu Sans Mono:size=10"
+bindsym $mod+Shift+q kill
+bindsym $mod+Return exec alacritty
+bindsym $mod+d exec --no-startup-id dmenu_run -fn "DejaVu Sans Mono:size=10"
 
 bar {
     status_command i3status
